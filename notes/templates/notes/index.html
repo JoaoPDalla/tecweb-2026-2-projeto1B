@@ -1,0 +1,25 @@
+{% extends "notes/base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="appbar">
+      <img src="{% static 'notes/img/logo-getit.png' %}" class="logo" />
+      <span class="subtitle">Como o Post-it, mas com outro verbo</span>
+</div>
+
+<form method="post">
+  {% csrf_token %}
+  <label for="titulo">Título</label>
+  <input id="titulo" type="text" name="titulo" />
+  <label for="detalhes">Detalhes</label>
+  <textarea id="detalhes" name="detalhes"></textarea>
+  <input type="submit" />
+</form>
+
+<ul>
+  {% for note in notes %}
+  <li>{{ note.title }} {{ note.content }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
