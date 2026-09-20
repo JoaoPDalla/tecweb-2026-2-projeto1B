@@ -146,6 +146,10 @@ font-family: 'Permanent Marker', cursive;
   height:1rem;
   width: auto;
 }
+.linha{
+  display: flex;
+  flex-direction: row;
+}
 
 
 

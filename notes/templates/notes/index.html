@@ -38,20 +38,20 @@
   {% for note in notes %}
 <div class="card">
     <h3 class="card-title">{{ note.title }}</h3>
-    <form method ='post' action = "/notes/delete/{{note.id}}/">
-                {% csrf_token %}         
-                <button type = "submit">
-                <img class = 'lixeira' src = "{% static 'notes/img/lixeira.jpg' %}">
-                </button>
-            </form>
-            <a href="{% url 'update' note.id %}">
-                <img class="lixeira" src="{% static 'notes/img/update.png' %}">
-            </a>
     <div class="card-content">
       <p>
         {{ note.content }}
       </p>
     </div>
+    <form method ='post' action = "/notes/delete/{{note.id}}/">
+                {% csrf_token %}         
+                <button type = "submit">
+                <img class = 'lixeira' src = "{% static 'notes/img/lixeira.png' %}">
+                </button>
+            </form>
+            <a href="{% url 'update' note.id %}">
+                <img class="lixeira" src="{% static 'notes/img/update.png' %}">
+            </a>
   </div>
   {% endfor %}
 </div>
