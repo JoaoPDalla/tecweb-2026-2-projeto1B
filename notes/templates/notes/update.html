@@ -7,7 +7,6 @@
     {% csrf_token %}
     <input class="autoresize" id="titulo" type="text" name="titulo" value="{{ note.title }}"/>
     <textarea class="autoresize" id="detalhes" name="detalhes">{{ note.content }}</textarea>
-    <input class="autoresize" id="tag" type="text" name="tag" value="{{ note.tag.all|join:', ' }}"/>
     <div class="linha">
         <a class="btn btn-cancelar" href="/">Cancelar</a>
         <button class="btn" type="submit">Salvar</button>
